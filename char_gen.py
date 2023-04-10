@@ -108,9 +108,8 @@ def class_assign(current_char):
         stat_check = [i[0] >= i[1] for i in zip(current_stats, stat_minimums)]
         if all(stat_check):
             primes = [new_class_stat_dict[current_class][i+"Prime"] for i in stats]
-            # stat_weight = sum([stat_weights[i[0]] for i in zip(current_stats,primes) if i[1]])
-            stat_weight = stat_weighting(current_stats, primes)
             base_weight = new_race_info_dict["Class"][race][current_class]
+            stat_weight = stat_weighting(current_stats, primes)
             current_weight = base_weight * stat_weight
         else:
             current_weight = 0
@@ -207,7 +206,6 @@ def belief_assign(game_class, group, full_name, index):
     end_index = start_index + 33
     current_rolls = belief_rolls[start_index:end_index]
     group_weights = new_race_info_dict["Beliefs"][group]
-    class_weights = 0
 
     belief_values = {}
     for belief, roll in zip(belief_list, current_rolls):
@@ -417,7 +415,6 @@ while run:
         belief_range = range(-50, 51, 1)
         belief_weights = belief_dict.get("Belief Weights")
         belief_rolls = list(np.random.choice(belief_range, total_count*33, p=belief_weights))
-
     # ----Character Assign
     index = 0
     remove_list = []
