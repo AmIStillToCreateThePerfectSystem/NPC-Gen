@@ -1,0 +1,4 @@
+numpy = 1.24.1
+openpyxl = 3.0.10
+pandas = 1.5.2
+
