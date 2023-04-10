@@ -552,39 +552,3 @@ while run:
         print(f"Analysis complete.\t[ {(time.time()-startTime):.2f}s ]")
     # %%%Final Options
     final_options()
-
-
-# for i in range(-50,51,1):
-#     print(i)
-# %%Dead Code
-
-# workbook = xlsxwriter.Workbook('pandas_simple.xlsx')
-# cell_format = workbook.add_format().set_align('center')
-# #worksheet.set_column('A:S',None, cell_format)
-# new_rows = len(char_df)+1
-# new_cols = len(new_entry)
-# start_range = "A1"
-# end_range = xlref(new_rows,new_cols,False)
-# dest_filename = 'empty_book.xlsx'
-# full_path = file_path+'/'+dest_filename
-# wb = load_workbook(filename = full_path)
-# ws = wb.active
-# cell_range = ws[start_range : end_range]
-# for r in dataframe_to_rows(char_df, index=False, header=True):
-#     ws.append(r)
-# for cell in ws[1]:
-#     cell.style = 'Pandas'
-# wb.save(full_path)
-# char_df.to_excel('./test.xlsx', sheet_name='Characters', index=False)
-
-# level_rolls = np.random.random(population)
-
-# level_search = [0,0.86805555,0.95809750,0.98476132,0.99445726,0.99798305,0.99926516,0.99973138,0.99990091,0.99996256,0.99998498,0.99999395,0.99999754,0.99999913,0.99999971,0.99999992]
-# level_result = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]
-
-# level_list = [check_lowest(level_search,level_result,i) for i in level_rolls]
-
-
-# analysis_percent = char_df.groupby(["Group","Class"]).agg(Count=pd.NamedAgg(column="Class", aggfunc="count"))
-# analysis_percent = analysis_percent.assign(Percent=(analysis_percent["Count"] / char_df.groupby("Group")["ID"].count())*100)
-# analysis_percent = analysis_percent.round(2).sort_values(["Group","Percent"], ascending=False)
